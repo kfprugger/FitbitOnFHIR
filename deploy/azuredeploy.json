@@ -250,7 +250,7 @@
         {
             "type": "Microsoft.HealthcareApis/services/iomtconnectors",
             "name": "[concat(parameters('fhirServiceName'), '/', parameters('iotConnectorName'))]",
-            "apiVersion": "2020-05-01-preview",
+            "apiVersion": "2021-01-11",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "[resourceId('Microsoft.HealthcareApis/services', parameters('fhirServiceName'))]"
@@ -264,7 +264,7 @@
         {
             "type": "Microsoft.HealthcareApis/services/iomtconnectors/connections",
             "name": "[concat(parameters('fhirServiceName'), '/', parameters('iotConnectorName'), '/', parameters('connectionName'))]",
-            "apiVersion": "2020-05-01-preview",
+            "apiVersion": "2021-01-11",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "[resourceId('Microsoft.HealthcareApis/services/iomtconnectors', parameters('fhirServiceName'), parameters('iotConnectorName'))]"
@@ -273,7 +273,7 @@
         {
             "type": "Microsoft.HealthcareApis/services/iomtconnectors/mappings",
             "name": "[concat(parameters('fhirServiceName'), '/', parameters('iotConnectorName'), '/device')]",
-            "apiVersion": "2020-05-01-preview",
+            "apiVersion": "2021-01-11",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "[resourceId('Microsoft.HealthcareApis/services/iomtconnectors', parameters('fhirServiceName'), parameters('iotConnectorName'))]"
@@ -360,7 +360,7 @@
         {
             "type": "Microsoft.HealthcareApis/services/iomtconnectors/mappings",
             "name": "[concat(parameters('fhirServiceName'), '/', parameters('iotConnectorName'), '/fhir')]",
-            "apiVersion": "2020-05-01-preview",
+            "apiVersion": "2021-01-11",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "[resourceId('Microsoft.HealthcareApis/services/iomtconnectors', parameters('fhirServiceName'), parameters('iotConnectorName'))]"
@@ -540,7 +540,7 @@
                 "[resourceId('Microsoft.HealthcareApis/services/iomtconnectors/connections', parameters('fhirServiceName'), parameters('iotConnectorName'), parameters('connectionName'))]"
             ],
             "properties": {
-                "value": "[listkeys(resourceId('Microsoft.HealthcareApis/services/iomtconnectors/connections', parameters('fhirServiceName'), parameters('iotConnectorName'), parameters('connectionName')), '2020-05-01-preview').primaryConnectionString]",
+                "value": "[listkeys(resourceId('Microsoft.HealthcareApis/services/iomtconnectors/connections', parameters('fhirServiceName'), parameters('iotConnectorName'), parameters('connectionName')), '2021-01-11').primaryConnectionString]",
                 "contentType": "string"
             }
         }
